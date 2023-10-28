@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nav-bar"></div>
+    <div id="app">
+        <div class="cart">
+            <p>Carrito({{ cart.length }})</p>
+        </div>
+        <!-- We’ve given our product component a prop, or a custom attribute,
+             called premium. We are binding that custom attribute : to the 
+             premium that lives in our instance’s data. -->
+        <product :premium="premium" 
+            @add-to-cart="updateCart"
+            @remove-from-cart="removeItem"></product>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
